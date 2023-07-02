@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Carbon Footprint Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="03cf.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="02landingpage.html">Home</a></li>
+				<li><a href="03calculator.html">Carbon Footprint Calculator</a></li><br>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="head">
+
+		<br><center><h1>Carbon Footprint Calculator</h1></center><br>
+		<center><h3>Find out your carbon footprint and learn how to reduce it!</h3></center>
+		
+	</section>
+
+	<section id="cfcalculator">
+	<div class="question-container">
+ 
+		<div class="icons-container">
+			<img src="image/icon1.png" class="icon" onclick="showQuestion('question1')" alt="Question 1">
+			<img src="image/icon2.png" class="icon" onclick="showQuestion('question2')" alt="Question 2">
+			<img src="image/icon3.png" class="icon" onclick="showQuestion('question3')" alt="Question 3">
+			<img src="image/icon4.png" class="icon" onclick="showQuestion('question4')" alt="Question 4">
+			<img src="image/icon5.png" class="icon" onclick="showQuestion('question5')" alt="Question 5">      
+		</div>		  
+		<center><h2>If your Carbon Footprint is more than 8tCO2e it is not healthy!</h2></center>
+		<div id="question1" class="question">
+		<center><form id="form4">
+			<center><br><h2>Daily Transportation Consumption</h2></center><br>
+			<hr class="my-4">
+			<br><label for="transportlabel1">If you are using a car to go to work/class, which of these best describes the car you use daily?</label>
+			<select class="select" id="transportlabel1">
+				<option selected disable>Choose your option</option>
+					<option value="0">I don't travel using a car</option>
+					<option value="46.58">Electric Car</option>
+					<option value="22.74">Hybrid Car</option>
+					<option value="131.7">Petrol car (less than 1.4)</option>
+					<option value="157.2">Petrol car (1.4 to 2.0)</option>
+					<option value="249.7">Petrol car (more than 2.0)</option>
+					<option value="161.1">Diesel car (1.7 to 2.0)</option>
+					<option value="171.5">Diesel car (more than 2.0)</option>
+			</select>	
+
+			<br><label for="transportlabel2">Do you practice carpooling with others?</label>
+			<select class="select" id="transportlabel2">
+				<option selected disable>Choose your option</option>		
+					<option value="0.18">Yes</option>
+					<option value="0">No</option>
+			</select>
+			
+				
+			<br><label for="transportlabel3">What is your distance travelled while using a car in a week?</label>
+			
+			<br><input type="number" id="transportlabel3" placeholder="Enter km (min = 0km )" min="0">
+
+			<br><label for="transportlabel4">Do you use public transportation to work/class?</label>
+			<select class="select" id="transportlabel4">
+				<option selected disable>Choose your option</option>		
+					<option value="96.48">Yes</option>
+					<option value="0">No</option>
+			</select>
+
+			<br><label for="transportlabel5">How many times do you use public transportation in a week?</label>
+			<br><input type="number" id="transportlabel5" placeholder="Enter frequency (min = 0)" min="0">			
+			
+
+			<br><label for="transportlabel6">What is your distance travelled while using a public transport in a week?</label>		
+			<br><input type="number" id="transportlabel6" placeholder="Enter km (min = 0km )" min="0">			
+
+			<br><label for="transportlabel7">If you are using motorcycle to go to work/class, which of these best describes the motorcycle you use the most?</label>
+			<select class="select" id="transportlabel7">
+				<option selected disable>Choose your option</option>
+				<option value="0">I don't travel using a motorcycle</option>
+					<option value="22">Electric Motorcycle</option>
+					<option value="85">Small petrol motorcycle (less than 125cc)</option>
+					<option value="103.2">Medium petrol motorcycle (126cc to 500cc)</option>
+					<option value="137.2">Big petrol motorcycle (more than 500cc)</option>
+			</select>	
+			
+			<br><label for="transportlabel8">What is your distance travelled while using a motorcycle in a week?</label>
+			
+			<br><input type="number" id="transportlabel8" placeholder="Enter km (min = 0km )" min="0">
+		
+		</form></center>
+
+		<center><button onclick="validateQuestion1()" alt="Question 2">Next!</center><br><br>
+
+		
+	  	</div>  
+	
+		<div id="question2" class="question" style="display: none;">
+
+			<center><form id="form1">
+				<center><br><h2>Electricity Consumption</h2></center><br>
+				<hr class="my-4">
+
+				<br><label for="electriclabel1">How much kWh do you use monthly?</label>
+					<br><input type="number" id="electriclabel1" placeholder="Enter kWh per month" min="0">	
+				
+				<br><label for="electriclabel2">How many people are in your household?</label>
+				<br><input type="number" id="electriclabel2" placeholder="Enter number of people in household" min="1">	
+
+				<br><label for="electriclabel3">Do you use energy-efficient appliances such as LED light bulbs ?</label>
+				<select class="select" id="electriclabel3">
+					<option selected disable>Choose your option</option>
+						<option value="9">Yes</option>
+						<option value="0">No</option>
+				</select>
+
+				<br><label for="electriclabel4">How many hours do you left your lights on when not in use?</label>
+					<br><input type="number" id="electriclabel4" placeholder="Enter hours (min = 0 hours )" min="0">	
+					
+				<br><label for="electriclabel5">Do you use a 5 star rating electrical appliances at home or work ?</label>
+				<select class="select" id="electriclabel5">
+					<option selected disable>Choose your option</option>
+						<option value="0.5">Yes</option>
+						<option value="0">No</option>
+				</select></center>
+			</form>
+			<center><button onclick="validateQuestion2()" alt="Question 3">Next!</center><br><br>
+
+		</div>
+	
+		<div id="question3" class="question" style="display: none;">
+			<center><form id="form2">
+				<center><br><h2>Food Consumption</h2></center><br>
+				<hr class="my-4">
+
+				<br><label for="foodlabel1">How would you describe your diet?</label>
+				<select class="select" id="foodlabel1">
+					<option selected disable>Choose your option</option>
+						<option value="3.3">Meat in every meal</option>
+						<option value="2.5">Meat in some meals</option>
+						<option value="1.9">No Meat</option>
+						<option value="1.7">Vegetarian</option>
+						<option value="1.5">Vegan</option>
+				</select>
+
+				<br><label for="foodlabel2">How often do you buy locally sourced goods?</label>
+				<select class="select" id="foodlabel2">
+					<option selected disable>Choose your option</option>
+						<option value="8">Never- I only buy imported goods</option>
+						<option value="0.16">Rarely- I buy more imported goods compared to local goods</option>
+						<option value="0.24">Sometimes- Half of my goods are locally sourced</option>
+						<option value="0.32">Often- I buy more local goods compared to imported goods</option>
+						<option value="0.4">Very Often- I only buy local goods</option>
+				</select>
+
+				<br><label for="foodlabel3">How much do you throw away your food waste?</label>
+				<select class="select" id="foodlabel3">
+					<option selected disable>Choose your option</option>
+						<option value="0.0004">10%</option>
+						<option value="0.001025">25%</option>
+						<option value="0.00205">50%</option>
+						<option value="0.003075">75%</option>
+						<option value="0.0041">100%</option>
+				</select>
+
+				<br><label for="foodlabel4">How often do you compost food?</label>
+				<select class="select" id="foodlabel4">
+					<option selected disable>Choose your option</option>
+						<option value="0.1143">Never</option>
+						<option value="0.0857">Rarely</option>
+						<option value="0.05715">Sometimes</option>
+						<option value="0.02858">Often</option>
+						<option value="0.0114">Very Often</option>
+				</select>
+			</form>
+			<center><button onclick="validateQuestion3()" alt="Question 4">Next!</center><br><br>
+		</div>
+	
+	  	<div id="question4" class="question" style="display: none;">
+		<center><form id="form3">
+			<center><br><h2>Water Consumption</h2></center><br>
+			<hr class="my-4">
+
+			<br><label for="waterlabel2">How long is your average shower?</label>
+			<select class="select" id="waterlabel2">
+				<option selected disable>Choose your option</option>
+					<option value="37.8541">under 5 mins</option>
+					<option value="75.7082">5-10 mins</option>
+					<option value="124.919">11-30 mins</option>
+					<option value="143.846">over 30 mins</option>
+			</select>
+
+			<br><label for="waterlabel3">How long do you turn leave the tap water while brushing teeth in a day?</label>
+			<select class="select" id="waterlabel3">
+				<option selected disable>Choose your option</option>
+					<option value="22.7125">under 5 mins</option>
+					<option value="45.4249">5-10 mins</option>
+					<option value="113.562">11-30 mins</option>
+					<option value="170.344">over 30 mins</option>
+			</select>
+
+			<br><label for="waterlabel4">Do you use low-flow showerheads or faucets?</label>
+			<select class="select" id="waterlabel4">
+				<option selected disable>Choose your option</option>
+					<option value="0">Yes</option>
+					<option value="37.8541">No</option>
+			</select>
+
+			<br><label for="waterlabel5">Do you use clean waste water sinks and washing machines for non-potable purposes?</label>
+			<select class="select" id="waterlabel5">
+				<option selected disable>Choose your option</option>
+					<option value="15.1416">Yes</option>
+					<option value="0">No</option>
+			</select>
+
+			<br><label for="waterlabel6">Do you conserve rainwater for gardening purposes ?</label>
+			<select class="select" id="waterlabel6">
+				<option selected disable>Choose your option</option>
+					<option value="15.1416">Yes</option>
+					<option value="0">No</option>
+			</select>	
+
+		</form></center>
+
+		<center><button onclick="validateQuestion4()" alt="Question 5">Next!</center><br><br>
+
+		</div>
+
+		<div id="question5" class="question"style="display: none;">
+			<center><form id="form5">
+				<center><br><h2>Travel Consumption</h2></center><br>
+				<hr class="my-4">
+	
+				<br><label for="travel1">Do you travel using bus?</label>
+				<select class="select" id="travel1">
+					<option selected disable>Choose your option</option>		
+						<option value="0.0001859">Yes</option>
+						<option value="0">No</option>
+				</select>		
+				
+				<br><label for="travel2">What is your total distance travelled using bus in a year?</label>		
+				<br><input type="number" id="travel2" placeholder="Enter km (min = 0km )" min="0">	
+				
+				<br><label for="travel3">Do you travel using flight?</label>
+				<select class="select" id="travel3">
+					<option selected disable>Choose your option</option>		
+						<option value="0.0001631">Yes</option>
+						<option value="0">No</option>
+				</select>		
+				
+				<br><label for="travel4">What is your total distance travelled using flight in a year?</label>		
+				<br><input type="number" id="travel4" placeholder="Enter km (min = 0km )" min="0">
+		
+			</form></center>
+			<center><button onclick="calculateEmissions()">Let's Calculate!</button></center><br><br>
+
+		
+			<div class="result-container">
+				
+				<center><form id="form6">
+					<h5>Annual Emissions</h5>
+					<h6 id="totalTransportationEmissionyear"></h6>
+					<h6 id="totalelectricyear"></h6>
+					<h6 id="totalfoodyear"></h6>
+					<h6 id="totalwateryear"></h6>
+					<h6 id="totaltravelyear"></h6>
+					<h6 id="totalcfyear"></h6>
+					<h6 id="totaloffsetyear"></h6>
+					<h5>Kindly drop us your feedback!</h5>
+					<input placeholder="Your feedback" id="feedback" type="text"><br><br>
+					<input type="button" value="Submit" onclick="addData()" class="btnSubmit">
+				</form></center>
+			</div><br><br>		
+			
+		</div>
+
+		
+
+		<script src="03calculator.js"></script>
+			
+	</div>
+
+		
+</section> 
+
+
+
+
+	
+</body>
+</html>

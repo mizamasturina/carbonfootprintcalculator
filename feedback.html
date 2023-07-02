@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Carbon Footprint Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="record.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="02landingpage.html">Home</a></li>
+				<li><a href="record.html">View All Records</a>&nbsp;|&nbsp;<a href="feedback.html" class="active">View All Feedback</a></li><br>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="head">
+
+		<br><center><h1>View All Feedback</h1></center><br>
+		<center><h3>Find out all comment by user</h3></center>
+
+		<div class="tablebox">
+			<table>
+				<thead>
+					<tr>
+						<th>
+							No
+						</th>
+						<th>
+							First Name
+						</th>
+						<th>
+							Last Name
+						</th>
+						<th>
+							Comment
+						</th>
+					</tr>
+				</thead>
+				<tbody id="tablebody">
+					
+				</tbody>
+			</table>
+		</div>
+		
+	</section>
+
+	
+	<script type="text/javascript">
+		
+		fetchRecord();
+		function fetchRecord(){
+
+			let formData = new FormData();
+			formData.append('feedback', '1');
+	
+			fetch('getRecord.php', {
+			    method: 'POST',
+			    body: formData
+			  }).then((response) => { 
+	            return response.json().then((d) => {
+	                if(d.data == 0){
+	                	var body = "<tr><td colspan='20'>No Data Yet</td></tr>";
+	                	document.getElementById("tablebody").innerHTML = body;
+	                }else{
+
+	                	var arr = d.data;
+	                	var body = "";
+	                	for (var key in arr) {
+						    var obj = arr[key];
+						    body += `<tr>
+						    			<td>${key+1}</td>
+						    			<td>${obj.fname}</td>
+						    			<td>${obj.lname}</td>
+						    			<td>${obj.comment}</td>
+						    		</tr>`;
+						}
+
+						document.getElementById("tablebody").innerHTML = body;
+
+	                }
+	            }).catch((err) => {
+	                console.log(err);
+	            }) 
+	        });
+		}
+	</script>
+
+	
+</body>
+</html>
